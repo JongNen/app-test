@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="posts">
+	<insert id="create" parameterType="hashmap">
+		INSERT INTO
+		POSTS(ID, TITLE, CONTENT, USER_ID
+		<if test="userpass != null">
+			,USER_PASS
+		</if>
+		)
+		VALUES(#{id}, #{title}, #{content}, #{userId} 
+		<if test="userpass != null">
+			,#{userPass}
+		</if>
+		)
+	</insert>
+	
+	<select id = "seachAll" resultType = "data.Post">
+		SELECT * FROM POSTS	WHERE ROWNUM BETWEEN #{a} AND #{b}
+	</select>
+	
+	<select id="countDatas" resultType="int" parameterType="hashmap">
+	
+		COUNT(*) FROM POSTS WHERE {id}
+	
+	</select>
+	
+	<select id = "findById" resultType = "data.Post">
+	
+		SELECT * FROM POSTS WHERE ID = #{id}
+		
+	</select>
+	
+	<update id="modify" parameterType="hashmap">
+
+		UPDATE POSTS SET TITLE = #{title}, CONTENT = #{content}
+		WHERE ID = #{id}
+	</update>
+	
+</mapper>

@@ -1,0 +1,91 @@
+@charset "UTF-8";
+
+@import
+	url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100&display=swap')
+	;
+
+* {
+	font-family: 'Noto Sans KR', sans-serif;
+	box-sizing: border-box;
+}
+
+
+
+.root {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  min-width: 100vw;
+  height: 100vh;
+  margin: auto;
+ 
+}
+
+.block {
+	display: flex;
+	flex-direction: column;
+	margin-bottom: 4px;
+}
+
+.block-a {
+	display: flex;
+	flex-direction: column;
+	margin-bottom: 20px;
+}
+
+ .link {
+        display: block; /* 링크를 블록 요소로 변경하여 높이 조절 가능하도록 함 */
+        margin-top: 20px; /* 링크 위쪽 여백 크기 지정 */
+        margin-bottom: 20px; /* 링크 아래쪽 여백 크기 지정 */
+        line-height: 1.5; /* 링크 높이를 조절하기 위해 line-height 속성 지정 */
+    }
+
+/* 게시판 전체 */
+.board {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px; /* 게시물 간 간격 */
+}
+
+/* 게시물 */
+.post {
+  background-color: #f0f0f0;
+  width: calc(50% - 5px); /* 게시물 너비 */
+  padding: 10px;
+  border-radius: 5px;
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+/* 게시물 제목 */
+.title {
+  margin: 0;
+  font-size: 24px;
+}
+
+/* 게시물 내용 */
+.content {
+  margin: 10px 0;
+  font-size: 16px;
+}
+
+/* 게시물 작성자 */
+.author {
+  margin: 0;
+  font-size: 14px;
+}
+
+#logout {
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+
+#logout a {
+  color: #fff;
+  text-decoration: none;
+}
+
+#logout a:hover {
+  text-decoration: underline;
+}
